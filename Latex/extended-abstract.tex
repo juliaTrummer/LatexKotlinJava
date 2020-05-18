@@ -127,6 +127,7 @@ Kotlin ist gleich wie Java eine objektorientierte Programmiersprache. Ein in die
 in Bytecode für die JVM (Java Virtual Machine) kompiliert werden. Mit Kotlin können große Teile der 
 Java-Boilerplate-Codes\footnote{Boilerplate-Code: Sind häufig verwendete und meist unveränderte Code-Snippets mit
 gleicher Funktion.} verhindert werden.
+
 \section{Java}
 Java ist eine objektorientierte Programmiersprache und besteht aus den JDK (Java-Entwicklungstools) und der JRE
  (Java-Laufzeitumgebung). Grundsätzlich wird diese Programmiersprache für die Android Entwicklung 
@@ -178,7 +179,62 @@ In Kotlin gibt es das Sprachkonstrukt der Objekt Deklaration, mit dem das Single
 \subsubsection{Delegated Properties und Observer}
 Auch mit diesem Sprachfeature gibt es eine Erleichterung bei der Implementierung eines Design Patterns im Gegensatz zu Java. Anstatt einer eigener Implementierung des Observer Patterns kann das in Kotlin integrierte Observable Delegate verwendet werden. Dabei ruft die Delegated Property eine Callback Funktion mit drei Parametern bei einer Änderung auf. \ \texttt{private var currentSlideId: Int by \\Delegates.observable(0) \{ prop, oldSlideId, newSlideId -> .... \}} \\ Eine Delegated Property funktioniert prinzipielle wie eine reguläre Property, aber delegiert das Schreiben und Lesen von Werten an andere Funktionen. TODO: cite
 
+\section{Lines of Code (LoF)}
+Mittels dieser Metrik sollen die Umfänge der beiden Applikationen miteinander verglichen werden. Das Ziel ist es heraus zu finden welche der beiden Apps eine geringere Anzahl an Programmzeilen und Methoden hat. 
+Ein wichtiger Bestandteil in beiden Applikationen ist die activity\_main.xml. Diese beinhaltet bei beiden das Layout und somit die Optik der App. Da bei beiden derselbe Code und damit die genau gleiche Anzahl an 
+Codezeilen vorhanden ist, wurde diese nicht speziell berücksichtigt. Lediglich die für diese Applikation speziellen Klassen und Files werden einander gegenübergestellt.
 
+\subsubsection{Kotlin}
+Zuerst zur Kotlin Applikation. Hier werden die spezifischen Files in denen Änderungen vorgenommen wurden, analysiert. Wie man in der Tabelle 1 erkennen kann, umfasst diese Applikation insgesamt 201 Zeilen Code. Die größte Klasse ist hier die MainActivity.kt. Mit 119 Zeilen enthält sie mehr als die Hälfte des spezifischen Codes. 
+
+\begin{table}
+  \centering
+  \begin{tabular}{l r l l}
+    % \toprule
+    & & \multicolumn{2}{c}{\small{\textbf{Kotlin}}} \\
+    \cmidrule(r){3-4}
+    {\small\textit{Dateiname}}
+    & {\small \textit{LoF}}
+      & {\small \textit{Methoden}} \\
+    \midrule
+	Slide.kt & 15 & 1 \\
+	Slideshow.kt & 31 & 6 \\
+	MainActivity.kt & 119 & 5 \\
+	SharedPreference.kt & 16 & 2\\
+    % \bottomrule
+  \end{tabular}
+  \caption{In dieser Tabelle sind alle wichtigen Files, der in Kotlin implementierten Applikation samt Zeilenanzahl und Methodenanzahl enthalten.}~\label{tab:table1}
+\end{table}
+
+\subsubsection{Java}
+Bei der Java Applikation werden ebenfalls die spezifisch geänderten Files untersucht. Auch hier ist ein großer Teil des Codes in der MainActivity.java untergebracht wie man in der Tabelle 2 erkennen kann.
+
+\begin{table}
+  \centering
+  \begin{tabular}{l r l l}
+    % \toprule
+    & & \multicolumn{2}{c}{\small{\textbf{Java}}} \\
+    \cmidrule(r){3-4}
+    {\small\textit{Dateiname}}
+    & {\small \textit{LoF}}
+      & {\small \textit{Methoden}} \\
+    \midrule
+	Slide.java & 57 & 14\\
+	ObservedObject.java & 16 & 2\\
+	Slideshow.java & 56 & 7\\
+	MainActivity.java & 133 & 	7\\
+	SharedPref.java & 17 & 2\\
+    % \bottomrule
+  \end{tabular}
+  \caption{In dieser Tabelle sind alle wichtigen Files, der in Kotlin implementierten Applikation samt Zeilenanzahl und Methodenanzahl enthalten.   }~\label{tab:table2}
+\end{table}
+
+\section{Vergleich}
+Wie man deutlich an der Anzahl an Codezeilen sehen kann, hat die Java Applikation um etwa ein drittel mehr Zeilen als die, die in Kotlin implementiert wurde. Desweitern ist deutlich zu erkennen das die Anzahl an Methoden in der in Java implementierten Applikation, doppelt so hoch ist wie in der Kotlin App.
+Dieser eindeutige Unterschied im Umfang entsteht durch die in Kotlin integrierten Sprachfeatures. Nimmt man hier als Beispiel die Slide.kt (eine Data Class) und vergleicht diese mit der Slide.java Class. So ist der Unterschied darin zu erkennen das in der Data Class lediglich die Variablen deklariert werden, wo hingegen in der Java Class nicht nur die Variablen deklariert, sondern auch mittels Getter und Setter für die andern Klassen zugänglich gemacht werden müssen.
+Ein weiterer Grund warum bei der Java Applikation mehr Codezeilen zu finden sind, ist weil in der Slideshow.java mit Singelton und Konstruktoren gearbeitet wurde. Wohingegen in der Kotlin Variante der App, die Slideshow nicht als Class sondern als Objekt deklariert und implementiert wurde.
+Der dritte Unterschied liegt bei dem Thema shuffle. Bei Kotlin gibt es bereits eine fertige Methode, die man direkt nutzen kann. In der in Java implementierten Applikation brauchte man, um diese Funktion integrieren zu können, sowohl Collections als auch Comparater. Dadurch wurden aus einer einfachen Methode, eine sehr viel aufwändigere, die mit einigen Zeilen an zusätzlichen Code jedoch nur das gleiche Ergebnis erzielt.
+Zusammenfassend kann man also sagen das die in Kotlin implementierte Applikation nicht nur um ein Drittel des Codes kürzer, sondern auch durch die einzelnen Sprachfeatures deutlich einfacher zu implementieren ist.
 
 
 \balance{} 
