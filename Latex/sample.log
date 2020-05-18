@@ -1,36 +1,69 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.3)  18 MAY 2020 13:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdftex 2020.5.4)  18 MAY 2020 17:33
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
-**sample.bib
-(./sample.bib
-LaTeX2e <2018-12-01>
+**"D:/Bibliotheken/Dokumente/FH/4. Semester/Wissenschaftliches Arbeiten/NEXT GI
+THUB/LatexKotlinJava/Latex/sample.bib"
 
-./sample.bib:1: LaTeX Error: Missing \begin{document}.
+("D:/Bibliotheken/Dokumente/FH/4. Semester/Wissenschaftliches Arbeiten/NEXT GIT
+HUB/LatexKotlinJava/Latex/sample.bib"
+Overfull \hbox (1.5793pt too wide) in paragraph at lines 1--18
+\tenrm "https://www.techyourchance.com/kotlin-vs-java-whole-story/", ad-den-dum
+ = "(ac-cessed: 18.05.2020)", key-|
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 @
-     article{banerjee2018comparative,
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm "
+.\tenrm h
+.\kern-0.27779
+.\tenrm t
+.\tenrm t
+.etc.
+
+
+Overfull \hbox (82.94057pt too wide) in paragraph at lines 19--37
+[]\tenrm @onlineboilerplate, ti-tle = "Was ver-steht man unter einer Boil-er-pl
+ate?", url = "https://kulturbanause.de/faq/boilerplate/",|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm @
+.\tenrm o
+.\tenrm n
+.\tenrm l
+.etc.
+
+
+Overfull \hbox (10.52385pt too wide) in paragraph at lines 19--37
+\tenrm tle=Android De-vel-op-ment with Kotlin, au-thor=Moskala, Marcin and Wo-j
+da, Igor, year=2017, pub-lisher=Packt|
+
+\hbox(6.94444+1.94444)x469.75499, glue set - 1.0
+.\tenrm t
+.\tenrm l
+.\tenrm e
+.\tenrm =
+.\tenrm A
+.etc.
+
+)
+*\END
+! Undefined control sequence.
+<*> \END
+        
+? \end
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
 ? 
-./sample.bib:1: Emergency stop.
- ...                                              
-                                                  
-l.1 @
-     article{banerjee2018comparative,
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
 
- 
-Here is how much of TeX's memory you used:
- 7 strings out of 492616
- 260 string characters out of 6129482
- 57569 words of memory out of 5000000
- 4025 multiletter control sequences out of 15000+600000
- 3640 words of font info for 14 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 5i,0n,4p,46b,14s stack positions out of 5000i,500n,10000p,200000b,80000s
-./sample.bib:1:  ==> Fatal error occurred, no output PDF file produced!
+*
+(Please type a command or say `\end')
+*\end
+[1{C:/Users/leafr/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]<D:/Progra
+mms/MiKTex/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on sample.pdf (1 page, 23420 bytes).
+PDF statistics:
+ 10 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
