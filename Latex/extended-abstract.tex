@@ -106,8 +106,8 @@
 % Do not change the page size or page settings.
 \begin{abstract}
   UPDATED---\today. This paper presents the results of a comparative study about Kotlin and Java as programming
-  languages for realizing Android Applications. In particular we cover different fields like complexity, coding costs,
-  and code structure. Furthermore, we undertook a closer look at the features of Kotlin and Java. Conclusively
+  languages for realizing Android Applications. In particular we cover different fields like readability, coding costs,
+  and code structure. Furthermore, we undertook a closer look at the new features of Kotlin. Conclusively
   we will go over which coding language fits beginners.
 \end{abstract}
 
@@ -165,7 +165,7 @@ der Kontext verständlich ist.
 Was die Lesbarkeit betrifft gibt es für Programmiersprachen keine objektiven Metriken.
 
 \section{Sprachfeatures}
-Kotlin bietet viele sprachenspezifische Features, die es von Java unterscheiden und Beginnern den Einstieg erleichtern. Im Folgenden wird auf vier davon aus der Prototyp Applikation eingegangen.
+Kotlin bietet viele neue sprachenspezifische Features, die es von Java unterscheiden und Beginnern den Einstieg erleichtern. Im Folgenden wird auf vier davon aus der Prototyp Applikation eingegangen.
 
 \subsubsection{Null Sicherheit}
 Die größten Fehlerquellen in Java-Systemen sind fehlende Null-Checks und die daraus entstehenden Null-Pointer Exceptions zur Laufzeit. In Kotlin können diese Fehler bereits zur Kompilierzeit aufgezeigt werden durch die klare Trennung von Referenzen, die Null sein können und Referenzen, die es nicht sein können. Variablen müssen dafür explizit als Nullable gekennzeichnet werden durch das Anhängen eines Fragezeichens an den Datentyp bei der Variablendeklaration. Der Safe-Call-Operator (?.) kann dafür verwendet werden, dass immer entweder ein Ergebnis oder Null (ohne Null-Pointer Exception) zurückgegeben wird. \cite{moskala2017android} \\ \texttt{gpsText?.text = slide.GPS} \\ 
