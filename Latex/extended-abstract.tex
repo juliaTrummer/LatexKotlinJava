@@ -90,8 +90,8 @@
 %% For the camera ready, use the commands provided by the ACM in the Permission Release Form.
 \CopyrightYear{2020}
 \setcopyright{rightsretained}
-\conferenceinfo{CHI'20,}{April  25--30, 2020, Honolulu, HI, USA}
-\isbn{978-1-4503-6819-3/20/04}
+\conferenceinfo{FH Joanneum}{April 19, 2020, Kapfenberg, AUSTRIA}
+\isbn{978-1-4503-XXXX3/20/04}
 \doi{https://doi.org/10.1145/3334480.XXXXXXX}
 %% Then override the default copyright message with the \acmcopyright command.
 \copyrightinfo{\acmcopyright}
@@ -105,10 +105,9 @@
 
 % Do not change the page size or page settings.
 \begin{abstract}
-  UPDATED---\today. This paper presents the results of a comparative study about Kotlin and Java as programming
-  languages for realizing Android Applications. In particular we cover different fields like readability, coding costs,
-  and code structure. Furthermore, we undertook a closer look at the new features of Kotlin. Conclusively
-  we will go over which coding language fits beginners.
+  UPDATED---\today. This paper presents the results of a comparative study on Kotlin and Java as programming
+  languages for realizing Android Applications. In particular we cover different fields like readability and coding costs. Furthermore, we undertook a closer look at the new features of Kotlin. Conclusively
+  we will go over which coding language fits beginners best.
 \end{abstract}
 
 \keywords{\plainkeywords}
@@ -116,17 +115,17 @@
 
 
 \section{Einleitung}
-Derzeit werden immer mehr Android-Applikationen mit Kotlin entwickelt. Diese Programmiersprache ist im Gegensatz zu
+Derzeit werden immer mehr Android-Apps mit Kotlin entwickelt. Diese Programmiersprache ist im Gegensatz zu
 Java relativ neu und wurde erstmals 2016 veröffentlicht. Zugleich ist Kotlin seit dem ersten Release als 
-Open-Source-Software erhältlich und zielt im speziellen JVM (Java Virtual Machine) und Android an.\cite{techyourchance}
-In diesem Paper vergleichen wir Java mit Kotlin in den Aspekten Aufwand und Struktur. Darüber hinaus gehen wir auch
+Open-Source-Software erhältlich und zielt im speziellen JVM (Java Virtual Machine) und Android ab. \cite{techyourchance}
+In diesem Paper vergleichen wir Java mit Kotlin in den Aspekten Aufwand und Lesbarkeit. Darüber hinaus gehen wir auch
 auf einige Sprachfeatures die Kotlin bietet ein. Zur Unterstützung unserer Vergleichsstudie
-haben wir uns eine App ausgedacht und in beiden Programmiersprachen (Java und Kotlin) umgesetzt.
-Ziel dieser Studie ist herauszufinden ob die Android Entwicklung in Java oder Kotlin
+haben wir uns eine Slideshow-App ausgedacht und in beiden Programmiersprachen (Java und Kotlin) umgesetzt.
+Ziel dieser Studie ist es herauszufinden, ob die Android Entwicklung in Java oder Kotlin
 einfacher für Einsteiger ist.
 
 \section{Kotlin}
-Kotlin ist gleich wie Java eine objektorientierte Programmiersprache. Ein in dieser Sprache geschriebener Code kann 
+Kotlin ist, gleich wie Java, eine objektorientierte Programmiersprache. Ein in dieser Sprache geschriebener Code kann 
 in Bytecode für die JVM (Java Virtual Machine) kompiliert werden. Mit Kotlin können große Teile der 
 Java-Boilerplate-Codes\footnote{Boilerplate-Code: Sind häufig verwendete und meist unveränderte Code-Snippets mit
 gleicher Funktion.} verhindert werden.\cite{boilerplate}
@@ -134,7 +133,7 @@ gleicher Funktion.} verhindert werden.\cite{boilerplate}
 \section{Java}
 Java ist eine objektorientierte Programmiersprache und besteht aus den JDK (Java-Entwicklungstools) und der JRE
  (Java-Laufzeitumgebung). Grundsätzlich wird diese Programmiersprache für die Android Entwicklung 
- verwendet, weil sie sehr bekannt ist.
+ verwendet, weil sie sehr bekannt ist. TODO: Zitierung?
 
 
 \begin{marginfigure}[-12pc]
@@ -159,37 +158,37 @@ Java ist eine objektorientierte Programmiersprache und besteht aus den JDK (Java
 Viele Entwickler meinen, dass Kotlin eine bessere Syntax als Java hat und deshalb besser
 zu lesen ist. Nun ein Beispiel zu dieser Aussage: Wenn man versucht einen fremdsprachigen
 Text zu lesen, ist es schwierig einen Satz zu verstehen ohne, dass man die Bedeutung der
-einzelnen Wörter kennt. Versteht man aber mehrere Wörter und den Kontext ist, es einfacher den
+einzelnen Wörter kennt. Versteht man aber mehrere Wörter und den Kontext, ist es einfacher den
 Text zu lesen. Deshalb hat die Wahl der Sprache keinen Einfluss auf die Lesbarkeit, solange
 der Kontext verständlich ist.
-Was die Lesbarkeit betrifft gibt es für Programmiersprachen keine objektiven Metriken.
+Was die Lesbarkeit betrifft, gibt es für Programmiersprachen keine objektiven Metriken.
 
 \section{Sprachfeatures}
-Kotlin bietet viele neue sprachenspezifische Features, die es von Java unterscheiden und Beginnern den Einstieg erleichtern. Im Folgenden wird auf vier davon aus der Prototyp Applikation eingegangen.
+Kotlin bietet viele neue sprachenspezifische Features, die es von Java unterscheiden und Beginnern den Einstieg erleichtern. Im Folgenden wird auf vier solcher Features des Prototypes eingegangen.
 
 \subsubsection{Null Sicherheit}
-Die größten Fehlerquellen in Java-Systemen sind fehlende Null-Checks und die daraus entstehenden Null-Pointer Exceptions zur Laufzeit. In Kotlin können diese Fehler bereits zur Kompilierzeit aufgezeigt werden durch die klare Trennung von Referenzen, die Null sein können und Referenzen, die es nicht sein können. Variablen müssen dafür explizit als Nullable gekennzeichnet werden durch das Anhängen eines Fragezeichens an den Datentyp bei der Variablendeklaration. Der Safe-Call-Operator (?.) kann dafür verwendet werden, dass immer entweder ein Ergebnis oder Null (ohne Null-Pointer Exception) zurückgegeben wird. \cite{moskala2017android} \\ \texttt{gpsText?.text = slide.GPS} \\ 
+Die größten Fehlerquellen in Java-Systemen sind fehlende Null-Checks und die daraus entstehenden Null-Pointer Exceptions zur Laufzeit. In Kotlin können diese Fehler bereits zur Kompilierzeit aufgezeigt werden durch die klare Trennung von Referenzen, die Null sein können und Referenzen, die es nicht sein können. Variablen müssen dafür explizit als Nullable gekennzeichnet werden mit dem Anhängen eines Fragezeichens an den Datentyp bei der Variablendeklaration. Der Safe-Call-Operator (?.) kann dafür verwendet werden, dass immer entweder ein Ergebnis oder Null (ohne Null-Pointer Exception) zurückgegeben wird. \cite{moskala2017android} \\ \texttt{gpsText?.text = slide.GPS} \\ 
 
 \subsubsection{Datenklassen}
-Um Klassen als Datencontainer verwenden zu können, braucht es in Java min. einen Konstruktor und Getter/Setter. In Kotlin kann mit dem Keyword "data" eine Datenklasse erstellt werden, die ohne diesen Boilerplate-Code auskommt. \\ \texttt{data class Slide(val id:Int,
+Um Klassen als Datencontainer verwenden zu können, braucht es in Java min. einen Konstruktor und Getter/Setter. In Kotlin kann mit dem Keyword "data" eine Datenklasse erstellt werden, die ohne diesen Boilerplate-Code zurechtkommt. \\ \texttt{data class Slide(val id:Int,
                  var title:String = "untitled", ...)} \\ Der Compiler generiert hier Getter und Setter sowie die Methoden copy(), toString(), hashCode() und equals() automatisch im Hintergrund.
 \cite{samuel2017programming} 
 
 \subsubsection{Objekt Deklaration und Singletons}
-In Kotlin gibt es das Sprachkonstrukt der Objekt Deklaration, mit dem das Singleton Pattern einfacher und kürzer als in Java implementiert werden kann und somit nur mehr eine Instanz einer Klasse erstellt werden kann. Dafür wird das Keyword "class" mit dem Keyword "object" ausgetauscht. \\\texttt{object Slideshow \{....\}} \\Einer Objekt Deklaration können Methoden und Properties genau wie einer Klasse hinzugefügt werden. \cite{moskala2017android} 
+In Kotlin gibt es das Sprachkonstrukt der Objekt Deklaration, mit dem das Singleton Pattern einfacher und kürzer als in Java implementiert werden kann. Dafür wird das Keyword "class" mit dem Keyword "object" ausgetauscht und somit kann nur mehr eine Instanz einer Klasse erstellt werden. \\\texttt{object Slideshow \{....\}} \\Einer Objekt Deklaration können Methoden und Properties genau wie einer Klasse hinzugefügt werden. \cite{moskala2017android} 
 
 
 \subsubsection{Delegated Properties und Observer}
-Auch mit diesem Sprachfeature gibt es eine Erleichterung bei der Implementierung eines Design Patterns im Gegensatz zu Java. Anstatt einer eigener Implementierung des Observer Patterns kann das in Kotlin integrierte Observable Delegate verwendet werden. Dabei ruft die Delegated Property eine Callback Funktion mit drei Parametern bei einer Änderung auf. \\ \texttt{private var currentSlideId: Int by \\Delegates.observable(0) \{ prop, oldSlideId, newSlideId -> .... \}} \\ Eine Delegated Property funktioniert prinzipielle wie eine reguläre Property, aber delegiert das Schreiben und Lesen von Werten an andere Funktionen. \cite{delegates}
+Auch mit diesem Sprachfeature gibt es eine Erleichterung bei der Verwendung eines Design Patterns im Gegensatz zu Java. Anstatt einer eigener Implementierung des Observer Patterns kann das in Kotlin integrierte Observable Delegate verwendet werden. Dabei ruft die Delegated Property eine Callback Funktion mit drei Parametern bei einer Änderung auf. \\ \texttt{private var currentSlideId: Int by \\Delegates.observable(0) \{ prop, oldSlideId, newSlideId -> .... \}} \\ Eine Delegated Property funktioniert prinzipiell wie eine reguläre Property, aber delegiert das Schreiben und Lesen von Werten an andere Funktionen. \cite{delegates}
 
 \section{Lines of Code (LoC)}
-Mittels dieser Metrik sollen die Umfänge der beiden Protoypen miteinander verglichen werden. Das Ziel ist es heraus zu finden welche der beiden Apps eine geringere Anzahl an Programmzeilen und Methoden hat.\footnote{Klicken sie hier: https://github.com/LeaFranz/KotlinJavaSlideshow} 
+Mittels dieser Metrik sollen die Umfänge der beiden Protoypen miteinander verglichen werden. Das Ziel ist es heraus zu finden welche der beiden Apps eine geringere Anzahl an Programmzeilen und Methoden hat.\footnote{Link zu den Apps: https://github.com/LeaFranz/KotlinJavaSlideshow} 
 
 \begin{marginfigure}[-20pc]
   \begin{minipage}{\marginparwidth}
     \centering
     \includegraphics[width=1.05\marginparwidth]{figures/Kotlin-Tabelle.png}
-    \caption{In dieser Tabelle sind alle wichtigen Files, der in Kotlin implementierten Applikation samt Zeilenanzahl und Methodenanzahl enthalten.}
+    \caption{In dieser Tabelle sind alle wichtigen Files der in Kotlin implementierten Applikation samt Zeilenanzahl und Methodenanzahl enthalten.}
   \end{minipage}
 \end{marginfigure}
 
@@ -197,18 +196,18 @@ Mittels dieser Metrik sollen die Umfänge der beiden Protoypen miteinander vergl
   \begin{minipage}{\marginparwidth}
     \centering
     \includegraphics[width=1.05\marginparwidth]{figures/Java-Tabelle.png}
-    \caption{In dieser Tabelle sind alle wichtigen Files, der in Java implementierten Applikation samt Zeilenanzahl und Methodenanzahl enthalten. }
+    \caption{In dieser Tabelle sind alle wichtigen Files der in Java implementierten Applikation samt Zeilenanzahl und Methodenanzahl enthalten. }
   \end{minipage}
 \end{marginfigure}
 
 \subsubsection{Vergleich}
-Wie man deutlich an der Anzahl an Codezeilen sehen kann, hat der Java Prototype um etwa ein Drittel mehr Zeilen als die in Kotlin implementierte Applikation. Desweitern ist deutlich zu erkennen das die Anzahl an Methoden in der in Java implementierten Applikation, doppelt so hoch ist wie in der Kotlin App.
-Dieser eindeutige Unterschied im Umfang entsteht durch die in Kotlin integrierten Sprachfeatures. Einen wesentlichen Beitrag dazu leisten die in Kotlin schnell zu implementierenden Patterns wie Singelton und Observer und die Verwendung einer Data Class, bei der auf den Boilerplate-Code verzichtet werden kann.
-Ein weiterer Unterschied liegt bei dem Thema durchmischen einer ArrayList. Bei Kotlin gibt es bereits eine fertige Methode, die man direkt verwenden kann. In der in Java implementierten Applikation braucht man dazu Collections und Comparater. Dadurch wurden aus einer einfachen Methode, eine sehr viel aufwändigere, die mit einigen Zeilen an zusätzlichen Code nur das gleiche Ergebnis erzielt.
+Wie man deutlich an der Anzahl an Codezeilen sehen kann, hat der Java-Prototype um etwa ein Drittel mehr Zeilen als die in Kotlin implementierte Applikation. Des Weiteren ist deutlich zu erkennen, dass die Anzahl an Methoden in der in Java implementierten Applikation doppelt so hoch ist, wie in der Kotlin-App.
+Dieser eindeutige Unterschied im Umfang entsteht unter anderem durch die in Kotlin integrierten Sprachfeatures. Einen wesentlichen Beitrag dazu leisten in Kotlin schnell zu implementierenden Patterns(Singleton, Observer) und die Verwendung einer Data Class, durch die auf Boilerplate-Code verzichtet werden kann.
+Ein weiterer Unterschied liegt beim "Shuffle" einer ArrayList. Bei Kotlin gibt es bereits eine fertige, direkt verwendbare Methode. In der in Java implementierten Applikation braucht man dazu Collections und einen Comparator, wodurch der Code für die gleiche Funktionalität maßgeblich länger wird.
 
 \section{Fazit}
-Zusammenfassend kann man also sagen das die in Kotlin implementierte Applikation nicht nur um ein Drittel des Codes kürzer, sondern auch durch die einzelnen Sprachfeatures deutlich einfacher zu implementieren ist.
-Durch die Analyse der Prototypen anhand der verwendeten Metriken (Lesbarkeit, Sprachfeatures und Lines of Code) sind wir zu dem Schluss gekommen, dass wir einem Einsteiger für die Android App Entwicklung Kotlin empfehlen würden.
+Zusammenfassend kann man sagen, dass die in Kotlin implementierte Applikation nicht nur um ein Drittel des Codes kürzer, sondern auch durch die einzelnen Sprachfeatures deutlich einfacher zu implementieren ist.
+Durch die Analyse der Prototypen anhand der verwendeten Metriken (Lesbarkeit, Sprachfeatures und Lines of Code) sind wir zu dem Schluss gekommen, dass wir Einsteigern für die Android-App-Entwicklung Kotlin empfehlen würden.
 
 \balance{} 
 
