@@ -34,12 +34,12 @@
 % Paper metadata (use plain text, for PDF inclusion and later
 % re-using, if desired).  Use \emtpyauthor when submitting for review
 % so you remain anonymous.
-\def\plaintitle{Eine Vergleichsstudie: Java und Kotlin - TODO}
+\def\plaintitle{Eine Vergleichsstudie: Java vs. Kotlin in Bezug auf Einstieger in der Android-App-Entwicklung}
 \def\plainauthor{Franz Lea, Trummer Julia, Wieser Stefanie}
 \def\emptyauthor{}
-\def\plainkeywords{Java; Kotlin; Application Development; Code Complexity;}
+\def\plainkeywords{Java; Kotlin; Application Development; Android; Beginner;}
 \def\plaingeneralterms{Documentation, Standardization}
-\title{Eine Vergleichsstudie: Java und Kotlin - TODO}
+\title{Eine Vergleichsstudie: Java vs. Kotlin in Bezug auf Einsteiger in der Android-App-Entwicklung}
 
 \numberofauthors{6}
 % Notice how author names are alternately typesetted to appear ordered
@@ -173,11 +173,11 @@ Um Klassen als Datencontainer verwenden zu können, braucht es in Java min. eine
 \cite{samuel2017programming} 
 
 \subsubsection{Objekt Deklaration und Singletons}
-In Kotlin gibt es das Sprachkonstrukt der Objekt Deklaration, mit dem das Singleton Pattern einfacher und kürzer als in Java implementiert werden kann und somit nur mehr eine Instanz einer Klasse erstellt werden kann. Dafür wird das Keyword "class" mit dem Keyword "object" ausgetauscht. \\\texttt{object Slideshow \{....\}} \\Einer Objekt Deklaration können Methoden und Properties genau wie einer Klasse hinzugefügt werden. \cite{moskala2017android} \\TODO: ERKLÄREN WAS SINGLETON?
+In Kotlin gibt es das Sprachkonstrukt der Objekt Deklaration, mit dem das Singleton Pattern einfacher und kürzer als in Java implementiert werden kann und somit nur mehr eine Instanz einer Klasse erstellt werden kann. Dafür wird das Keyword "class" mit dem Keyword "object" ausgetauscht. \\\texttt{object Slideshow \{....\}} \\Einer Objekt Deklaration können Methoden und Properties genau wie einer Klasse hinzugefügt werden. \cite{moskala2017android} 
 
 
 \subsubsection{Delegated Properties und Observer}
-Auch mit diesem Sprachfeature gibt es eine Erleichterung bei der Implementierung eines Design Patterns im Gegensatz zu Java. Anstatt einer eigener Implementierung des Observer Patterns kann das in Kotlin integrierte Observable Delegate verwendet werden. Dabei ruft die Delegated Property eine Callback Funktion mit drei Parametern bei einer Änderung auf. \ \texttt{private var currentSlideId: Int by \\Delegates.observable(0) \{ prop, oldSlideId, newSlideId -> .... \}} \\ Eine Delegated Property funktioniert prinzipielle wie eine reguläre Property, aber delegiert das Schreiben und Lesen von Werten an andere Funktionen. TODO: cite
+Auch mit diesem Sprachfeature gibt es eine Erleichterung bei der Implementierung eines Design Patterns im Gegensatz zu Java. Anstatt einer eigener Implementierung des Observer Patterns kann das in Kotlin integrierte Observable Delegate verwendet werden. Dabei ruft die Delegated Property eine Callback Funktion mit drei Parametern bei einer Änderung auf. \ \texttt{private var currentSlideId: Int by \\Delegates.observable(0) \{ prop, oldSlideId, newSlideId -> .... \}} \\ Eine Delegated Property funktioniert prinzipielle wie eine reguläre Property, aber delegiert das Schreiben und Lesen von Werten an andere Funktionen. \cite{delegates}
 
 \section{Lines of Code (LoF)}
 Mittels dieser Metrik sollen die Umfänge der beiden Applikationen miteinander verglichen werden. Das Ziel ist es heraus zu finden welche der beiden Apps eine geringere Anzahl an Programmzeilen und Methoden hat. 
