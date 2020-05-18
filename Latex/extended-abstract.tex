@@ -180,17 +180,12 @@ In Kotlin gibt es das Sprachkonstrukt der Objekt Deklaration, mit dem das Single
 
 
 \subsubsection{Delegated Properties und Observer}
-Auch mit diesem Sprachfeature gibt es eine Erleichterung bei der Implementierung eines Design Patterns im Gegensatz zu Java. Anstatt einer eigener Implementierung des Observer Patterns kann das in Kotlin integrierte Observable Delegate verwendet werden. Dabei ruft die Delegated Property eine Callback Funktion mit drei Parametern bei einer Änderung auf. \ \texttt{private var currentSlideId: Int by \\Delegates.observable(0) \{ prop, oldSlideId, newSlideId -> .... \}} \\ Eine Delegated Property funktioniert prinzipielle wie eine reguläre Property, aber delegiert das Schreiben und Lesen von Werten an andere Funktionen. \cite{delegates}
+Auch mit diesem Sprachfeature gibt es eine Erleichterung bei der Implementierung eines Design Patterns im Gegensatz zu Java. Anstatt einer eigener Implementierung des Observer Patterns kann das in Kotlin integrierte Observable Delegate verwendet werden. Dabei ruft die Delegated Property eine Callback Funktion mit drei Parametern bei einer Änderung auf. \\ \texttt{private var currentSlideId: Int by \\Delegates.observable(0) \{ prop, oldSlideId, newSlideId -> .... \}} \\ Eine Delegated Property funktioniert prinzipielle wie eine reguläre Property, aber delegiert das Schreiben und Lesen von Werten an andere Funktionen. \cite{delegates}
 
-\section{Lines of Code (LoF)}
-Mittels dieser Metrik sollen die Umfänge der beiden Applikationen miteinander verglichen werden. Das Ziel ist es heraus zu finden welche der beiden Apps eine geringere Anzahl an Programmzeilen und Methoden hat. 
-Ein wichtiger Bestandteil in beiden Applikationen ist die activity\_main.xml. Diese beinhaltet bei beiden das Layout und somit die Optik der App. Da bei beiden derselbe Code und damit die genau gleiche Anzahl an 
-Codezeilen vorhanden ist, wurde diese nicht speziell berücksichtigt. Lediglich die für diese Applikation speziellen Klassen und Files werden einander gegenübergestellt.
+\section{Lines of Code (LoC)}
+Mittels dieser Metrik sollen die Umfänge der beiden Protoypen miteinander verglichen werden. Das Ziel ist es heraus zu finden welche der beiden Apps eine geringere Anzahl an Programmzeilen und Methoden hat.\footnote{Klicken sie hier: https://github.com/LeaFranz/KotlinJavaSlideshow} 
 
-\subsubsection{Kotlin}
-Zuerst zur Kotlin Applikation. Hier werden die spezifischen Files in denen Änderungen vorgenommen wurden, analysiert. Wie man in der Tabelle 1 erkennen kann, umfasst diese Applikation insgesamt 201 Zeilen Code. Die größte Klasse ist hier die MainActivity.kt. Mit 119 Zeilen enthält sie mehr als die Hälfte des spezifischen Codes. 
-
-\begin{marginfigure}[-40pc]
+\begin{marginfigure}[-20pc]
   \begin{minipage}{\marginparwidth}
     \centering
     \includegraphics[width=1.05\marginparwidth]{figures/Kotlin-Tabelle.png}
@@ -198,24 +193,22 @@ Zuerst zur Kotlin Applikation. Hier werden die spezifischen Files in denen Ände
   \end{minipage}
 \end{marginfigure}
 
-\begin{marginfigure}[-15pc]
+\begin{marginfigure}[-3pc]
   \begin{minipage}{\marginparwidth}
     \centering
     \includegraphics[width=1.05\marginparwidth]{figures/Java-Tabelle.png}
-    \caption{In dieser Tabelle sind alle wichtigen Files, der in Java implementierten Applikation samt Zeilenanzahl und Methodenanzahl enthalten.}
+    \caption{In dieser Tabelle sind alle wichtigen Files, der in Java implementierten Applikation samt Zeilenanzahl und Methodenanzahl enthalten. }
   \end{minipage}
 \end{marginfigure}
 
-\subsubsection{Java}
-Bei der Java Applikation werden ebenfalls die spezifisch geänderten Files untersucht. Auch hier ist ein großer Teil des Codes in der MainActivity.java untergebracht wie man in der Tabelle 2 erkennen kann.
+\subsubsection{Vergleich}
+Wie man deutlich an der Anzahl an Codezeilen sehen kann, hat der Java Prototype um etwa ein Drittel mehr Zeilen als die in Kotlin implementierte Applikation. Desweitern ist deutlich zu erkennen das die Anzahl an Methoden in der in Java implementierten Applikation, doppelt so hoch ist wie in der Kotlin App.
+Dieser eindeutige Unterschied im Umfang entsteht durch die in Kotlin integrierten Sprachfeatures. Einen wesentlichen Beitrag dazu leisten die in Kotlin schnell zu implementierenden Patterns wie Singelton und Observer und die Verwendung einer Data Class, bei der auf den Boilerplate-Code verzichtet werden kann.
+Ein weiterer Unterschied liegt bei dem Thema durchmischen einer ArrayList. Bei Kotlin gibt es bereits eine fertige Methode, die man direkt verwenden kann. In der in Java implementierten Applikation braucht man dazu Collections und Comparater. Dadurch wurden aus einer einfachen Methode, eine sehr viel aufwändigere, die mit einigen Zeilen an zusätzlichen Code nur das gleiche Ergebnis erzielt.
 
-\section{Vergleich}
-Wie man deutlich an der Anzahl an Codezeilen sehen kann, hat die Java Applikation um etwa ein drittel mehr Zeilen als die, die in Kotlin implementiert wurde. Desweitern ist deutlich zu erkennen das die Anzahl an Methoden in der in Java implementierten Applikation, doppelt so hoch ist wie in der Kotlin App.
-Dieser eindeutige Unterschied im Umfang entsteht durch die in Kotlin integrierten Sprachfeatures. Nimmt man hier als Beispiel die Slide.kt (eine Data Class) und vergleicht diese mit der Slide.java Class. So ist der Unterschied darin zu erkennen das in der Data Class lediglich die Variablen deklariert werden, wo hingegen in der Java Class nicht nur die Variablen deklariert, sondern auch mittels Getter und Setter für die andern Klassen zugänglich gemacht werden müssen.
-Ein weiterer Grund warum bei der Java Applikation mehr Codezeilen zu finden sind, ist weil in der Slideshow.java mit Singelton und Konstruktoren gearbeitet wurde. Wohingegen in der Kotlin Variante der App, die Slideshow nicht als Class sondern als Objekt deklariert und implementiert wurde.
-Der dritte Unterschied liegt bei dem Thema shuffle. Bei Kotlin gibt es bereits eine fertige Methode, die man direkt nutzen kann. In der in Java implementierten Applikation brauchte man, um diese Funktion integrieren zu können, sowohl Collections als auch Comparater. Dadurch wurden aus einer einfachen Methode, eine sehr viel aufwändigere, die mit einigen Zeilen an zusätzlichen Code jedoch nur das gleiche Ergebnis erzielt.
+\section{Fazit}
 Zusammenfassend kann man also sagen das die in Kotlin implementierte Applikation nicht nur um ein Drittel des Codes kürzer, sondern auch durch die einzelnen Sprachfeatures deutlich einfacher zu implementieren ist.
-
+Durch die Analyse der Prototypen anhand der verwendeten Metriken (Lesbarkeit, Sprachfeatures und Lines of Code) sind wir zu dem Schluss gekommen, dass wir einem Einsteiger für die Android App Entwicklung Kotlin empfehlen würden.
 
 \balance{} 
 
