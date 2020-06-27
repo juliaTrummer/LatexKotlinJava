@@ -134,54 +134,34 @@ Java ist eine objektorientierte Programmiersprache und besteht aus den JDK (Java
  (Java-Laufzeitumgebung). Grundsätzlich wird diese Programmiersprache für die Android Entwicklung 
  verwendet, weil sie sehr bekannt ist. \cite{banerjee2018comparative}
 
-
-\begin{marginfigure}[-12pc]
-  \begin{minipage}{\marginparwidth}
-    \centering
-    \includegraphics[width=0.9\marginparwidth]{figures/kotlinlogo.png}
-    \caption{JetBrains Kotlin Logo. Photo:
-      \cczero~JetBrains s.r.o.}
-  \end{minipage}
-\end{marginfigure}
-
-\begin{marginfigure}[1pc]
-  \begin{minipage}{\marginparwidth}
-    \includegraphics[width=0.9\marginparwidth]{figures/javalogo.png}
-    \caption{Java Technologies Java Logo
-      \cczero~Java Technologies.}
-  \end{minipage}
-\end{marginfigure}
-
-
 \section{Lesbarkeit}
-Viele Entwickler meinen, dass Kotlin eine bessere Syntax als Java hat und deshalb besser
+Android Entwickler meinen, dass Kotlin eine bessere Syntax als Java hat und deshalb besser
 zu lesen ist. Nun ein Beispiel zu dieser Aussage: Wenn man versucht einen fremdsprachigen
 Text zu lesen, ist es schwierig einen Satz zu verstehen ohne, dass man die Bedeutung der
 einzelnen Wörter kennt. Versteht man aber mehrere Wörter und den Kontext, ist es einfacher den
 Text zu lesen. Deshalb hat die Wahl der Sprache keinen Einfluss auf die Lesbarkeit, solange
 der Kontext verständlich ist.
-Was die Lesbarkeit betrifft, gibt es für Programmiersprachen keine objektiven Metriken.
 
 \section{Sprachfeatures}
 Kotlin bietet viele neue sprachenspezifische Features, die es von Java unterscheiden und Beginnern den Einstieg erleichtern. Im Folgenden wird auf vier solcher Features des Prototypes eingegangen.
 
-\subsubsection{Null Sicherheit}
+\subsubsection{Null Safety}
 Die größten Fehlerquellen in Java-Systemen sind fehlende Null-Checks und die daraus entstehenden Null-Pointer Exceptions zur Laufzeit. In Kotlin können diese Fehler bereits zur Kompilierzeit aufgezeigt werden durch die klare Trennung von Referenzen, die Null sein können und Referenzen, die es nicht sein können. Variablen müssen dafür explizit als Nullable gekennzeichnet werden mit dem Anhängen eines Fragezeichens an den Datentyp bei der Variablendeklaration. Der Safe-Call-Operator (?.) kann dafür verwendet werden, dass immer entweder ein Ergebnis oder Null (ohne Null-Pointer Exception) zurückgegeben wird. \cite{moskala2017android} \\ \texttt{gpsText?.text = slide.GPS} \\ 
 
 \subsubsection{Datenklassen}
-Um Klassen als Datencontainer verwenden zu können, braucht es in Java min. einen Konstruktor und Getter/Setter. In Kotlin kann mit dem Keyword "data" eine Datenklasse erstellt werden, die ohne diesen Boilerplate-Code zurechtkommt. \\ \texttt{data class Slide(val id:Int,
+Um Klassen als Datencontainer verwenden zu können, braucht es in Java min. einen Konstruktor und Getter/Setter. In Kotlin kann mit dem Keyword "data", eine Datenklasse erstellt werden, die ohne diesen Boilerplate-Code zurechtkommt. \\ \texttt{data class Slide(val id:Int,
                  var title:String = "untitled", ...)} \\ Der Compiler generiert hier Getter und Setter sowie die Methoden copy(), toString(), hashCode() und equals() automatisch im Hintergrund.
 \cite{samuel2017programming} 
 
 \subsubsection{Objekt Deklaration und Singletons}
-In Kotlin gibt es das Sprachkonstrukt der Objekt Deklaration, mit dem das Singleton Pattern einfacher und kürzer als in Java implementiert werden kann. Dafür wird das Keyword "class" mit dem Keyword "object" ausgetauscht und somit kann nur mehr eine Instanz einer Klasse erstellt werden. \\\texttt{object Slideshow \{....\}} \\Einer Objekt Deklaration können Methoden und Properties genau wie einer Klasse hinzugefügt werden. \cite{moskala2017android} 
+In Kotlin gibt es das Sprachkonstrukt der Objekt Deklaration, mit dem das Singleton Pattern einfacher und kürzer als in Java implementiert. Dafür wird das Keyword "class" mit dem Keyword "object" ausgetauscht und somit kann nur mehr eine Instanz einer Klasse erstellt werden. \\\texttt{object Slideshow \{....\}} \\Einer Objekt Deklaration können Methoden und Properties genau wie einer Klasse hinzugefügt werden. \cite{moskala2017android}
 
 
 \subsubsection{Delegated Properties und Observer}
 Auch mit diesem Sprachfeature gibt es eine Erleichterung bei der Verwendung eines Design Patterns. Anstatt einer eigener Implementierung des Observer Patterns kann das in Kotlin integrierte Observable Delegate verwendet werden. Dabei ruft die Delegated Property eine Callback Funktion mit drei Parametern bei einer Änderung auf. \\ \texttt{private var currentSlideId: Int by \\Delegates.observable(0) \{ prop, oldSlideId, newSlideId -> .... \}} \\ Eine Delegated Property funktioniert prinzipiell wie eine reguläre Property, aber delegiert das Schreiben und Lesen von Werten an andere Funktionen. \cite{delegates}
 
 \section{Lines of Code (LoC)}
-Mittels dieser Metrik sollen die Umfänge der beiden Protoypen miteinander verglichen werden. Das Ziel ist es herauszufinden, welche der beiden Apps eine geringere Anzahl an Programmzeilen und Methoden hat.
+Mittels dieser Metrik sollen die Umfänge der beiden Protoypen miteinander verglichen werden. Das Ziel ist es, herauszufinden, welche der beiden Apps eine geringere Anzahl an Programmzeilen und Methoden hat.
 
 \begin{marginfigure}[-20pc]
   \begin{minipage}{\marginparwidth}
