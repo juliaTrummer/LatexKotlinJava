@@ -125,7 +125,8 @@ In diesem Paper vergleichen wir Java mit Kotlin in den Aspekten Aufwand und Lesb
 auf einige Sprachfeatures die Kotlin bietet ein. Zur Unterstützung unserer Vergleichsstudie
 haben wir uns einen Working Prototype einer Slideshow App ausgedacht und in beiden Programmiersprachen (Java und Kotlin) umgesetzt.
 Ziel dieser Studie ist es herauszufinden, ob die Android Entwicklung in Java oder Kotlin
-einfacher für Einsteiger ist.
+einfacher für Einsteiger ist. Die Kriterien für die Vergleichsstudie sind unter anderem Lesbarkeit,
+Sprachfeatures und Lines of Code.
 
 \section{Kotlin}
 Kotlin ist, gleich wie Java, eine objektorientierte Programmiersprache. Ein in dieser Sprache geschriebener Code kann 
@@ -144,12 +145,11 @@ zu lesen ist. Nun ein Beispiel zu dieser Aussage: Wenn man versucht einen fremds
 Text zu lesen, ist es schwierig einen Satz zu verstehen ohne, dass man die Bedeutung der
 einzelnen Wörter kennt. Versteht man aber mehrere Wörter und den Kontext, ist es einfacher den
 Text zu lesen. Deshalb hat die Wahl der Sprache keinen Einfluss auf die Lesbarkeit, solange
-der Kontext verständlich ist.Die Kriterien für die Vergleichsstudie sind unter anderem Lesbarkeit,
-Sprachfeatures und Lines of Code. Unter anderem ist der Syntax zwischen Kotlin und Java sehr ähnlich.
+der Kontext verständlich ist. Unter anderem ist der Syntax zwischen Kotlin und Java sehr ähnlich.
 Kotlin hat im Gegensatz zu Java eine etwas kürzere Zeilenlänge.
 
 \section{Sprachfeatures}
-Kotlin bietet viele neue sprachenspezifische Features, die es von Java unterscheiden und Beginnern der Android-App-Entwicklung den Einstieg erleichtern. Im Folgenden wird auf vier solcher Features des Prototypes eingegangen.
+Kotlin bietet viele neue sprachenspezifische Features, die es von Java unterscheiden und Beginnern der Android-App-Entwicklung den Einstieg erleichtern. Im Folgenden wird auf vier solcher Features des Prototypen eingegangen.
 
 \subsubsection{Null Safety}
 Die größten Fehlerquellen in Java-Systemen sind fehlende Null-Checks und die daraus entstehenden Null-Pointer Exceptions zur Laufzeit. In Kotlin können diese Fehler bereits zur Kompilierzeit aufgezeigt werden durch die klare Trennung von Referenzen, die Null sein können und Referenzen, die nicht null sein können. Variablen müssen explizit als Nullable mit dem Anhängen eines Fragezeichens an den Datentyp (string vs. string?) gekennzeichnet werden. Der Safe-Call-Operator (?.) kann dafür verwendet werden, dass immer entweder ein Ergebnis oder Null (ohne Null-Pointer Exception) zurückgegeben wird. \cite{moskala2017android} \\ \vskip 0.1in \texttt{gpsText?.text = slide.GPS} \\ 
